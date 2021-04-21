@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #445599;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <right>
+        <VBox alignment="CENTER" prefWidth="310.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <GridPane vgap="5.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                    </columnConstraints>
+                    <children>
+                        <TextField fx:id="containsElement" onKeyPressed="#containsElementPressed" promptText="Enter line" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="removeElement" onKeyPressed="#removeElementPressed" promptText="Enter line" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="add" onKeyPressed="#addPressed" promptText="Enter line" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Add" textFill="WHITE" GridPane.rowIndex="1" />
+                        <Label fx:id="containsElementLabel" text="Contains" textFill="WHITE" GridPane.rowIndex="2" />
+                        <Label fx:id="removeElementLabel" text="Remove" textFill="WHITE" GridPane.rowIndex="3" />
+                        <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#add" text="Add random" />
+                                <Button mnemonicParsing="false" onAction="#clear" prefWidth="70.0" text="Clear" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" GridPane.columnSpan="2">
+                            <children>
+                                <Label text="Size = " textFill="WHITE" />
+                                <Label fx:id="sizeLabel" text="0" textFill="WHITE" />
+                            </children>
+                        </HBox>
+                        <TextField fx:id="spaceY" onKeyPressed="#removeElementPressed" promptText="Enter line" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label text="Space X" textFill="WHITE" GridPane.rowIndex="6" />
+                        <Label text="Space Y" textFill="WHITE" GridPane.rowIndex="7" />
+                  <TextField fx:id="spaceX" onKeyPressed="#removeElementPressed" promptText="Enter line" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="removeChildren" onKeyPressed="#removeElementPressed" promptText="Enter line" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="removeChildrenLabel" text="Remove Children" textFill="WHITE" GridPane.rowIndex="4" />
+                    </children>
+                    <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </VBox.margin>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+        </VBox>
+    </right>
+    <center>
+        <ScrollPane prefViewportHeight="600.0" prefViewportWidth="600.0" BorderPane.alignment="CENTER">
+            <content>
+                <Canvas fx:id="canvas" height="900.0" width="1200.0" />
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
